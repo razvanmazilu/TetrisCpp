@@ -1,6 +1,7 @@
 #pragma once
 #include <cstdlib> 
 #include<raylib.h>
+#include <raymath.h>
 
 namespace constants {
     extern int height;

@@ -10,6 +10,7 @@ int main () {
     InitWindow(constants::width, constants::height, "Retro Tetris");
     SetTargetFPS(60);
     Background bk;
+    Vector2 startPos = {150.0, 10.0};
     
 
 
@@ -19,6 +20,8 @@ int main () {
         Block block;
         ClearBackground(constants::green);
         bk.Draw();
+        block.Draw(startPos);
+
         EndDrawing();
     }
     CloseWindow();

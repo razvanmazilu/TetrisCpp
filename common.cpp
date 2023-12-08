@@ -35,8 +35,8 @@ int constants::blockSprites[4][4][4] =  {
                                             },
                                          };
 int GenerateRandom(int x) { 
-    std::cout<<__func__<<std::endl;
-    std::cout<<"x :"<<x<<std::endl;
-    srand(time(0));
-    return rand()%x; 
+        std::cout<<__func__<<std::endl;
+        std::cout<<"x :"<<x<<std::endl;
+        srand(time(0));
+        return rand()%x; 
     }

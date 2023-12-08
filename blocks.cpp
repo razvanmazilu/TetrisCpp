@@ -1,5 +1,4 @@
 #include"blocks.h"
-#include"common.h"
 #include<iostream>
 
 Block::Block()
@@ -17,5 +16,24 @@ Block::Block()
             
          std::cout<<"\n";
     }       
+}
+
+void Block::Draw(Vector2 startPos) 
+{
+    
+    Rectangle segment = { startPos.x, 
+    startPos.y , 
+    10, 10};
+    for(int i = 0; i < 4; i++){
+        for (int j = 0; j < 4; j++)
+        {
+            if(block[i][j] == 1)
+            {
+                DrawRectangleRounded(segment, 0.5, 6, constants::darkGreen);
+            }
+            segment.x = startPos.x + i*10;
+            segment.y = startPos.y + j*10;
+        }
+    }
 }
         
