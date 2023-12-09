@@ -21,11 +21,18 @@ int main () {
         ClearBackground(constants::green);
         bk.Draw();
         block.Draw(position, constants::darkGreen);
-        if(eventTriggered(0.2))
-        {
-            block.Delete(position, constants::green);
-            position.y += 10;
+        if(!constants::isBlockDown){
+             if(eventTriggered(0.2))
+            {
+                block.Delete(position, constants::green);
+                position.y += 10;
+            }
+            if (position.y == constants::lowerLimit)
+            {
+                constants::isBlockDown = true;
+            }
         }
+   
 
         EndDrawing();
     }

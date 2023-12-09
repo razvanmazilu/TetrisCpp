@@ -14,6 +14,7 @@ namespace constants {
     extern int blockSprites[4][4][4];
     
     extern bool isBlockDown;
+    extern int lowerLimit;
 
     extern double lastUpdateTime;
 }

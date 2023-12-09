@@ -37,6 +37,7 @@ int constants::blockSprites[4][4][4] =  {
 
 
 bool constants::isBlockDown = false;
+int constants::lowerLimit = height - 2*offset - 15;
 double constants::lastUpdateTime = 0.0;
 
 int GenerateRandom(int x) { 
