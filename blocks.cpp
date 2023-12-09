@@ -18,7 +18,7 @@ Block::Block()
     }       
 }
 
-void Block::Draw(Vector2 startPos) 
+void Block::Draw(Vector2 startPos, Color color) 
 {
     
     Rectangle segment = { startPos.x, 
@@ -29,11 +29,15 @@ void Block::Draw(Vector2 startPos)
         {
             if(block[i][j] == 1)
             {
-                DrawRectangleRounded(segment, 0.5, 6, constants::darkGreen);
+                DrawRectangleRounded(segment, 0.5, 6, color);
             }
             segment.x = startPos.x + i*10;
             segment.y = startPos.y + j*10;
         }
     }
 }
-        
+
+void Block::Delete(Vector2 startPos, Color color)
+{
+    Draw(startPos, color);
+}

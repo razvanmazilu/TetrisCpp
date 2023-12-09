@@ -10,17 +10,22 @@ int main () {
     InitWindow(constants::width, constants::height, "Retro Tetris");
     SetTargetFPS(60);
     Background bk;
-    Vector2 startPos = {150.0, 10.0};
-    
+    Vector2 position = {150.0, 20.0};
+    Block block;
 
 
     while(WindowShouldClose() == false){
 
         BeginDrawing();
-        Block block;
+        
         ClearBackground(constants::green);
         bk.Draw();
-        block.Draw(startPos);
+        block.Draw(position, constants::darkGreen);
+        if(eventTriggered(0.2))
+        {
+            block.Delete(position, constants::green);
+            position.y += 10;
+        }
 
         EndDrawing();
     }

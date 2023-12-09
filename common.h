@@ -13,6 +13,10 @@ namespace constants {
 
     extern int blockSprites[4][4][4];
     
+    extern bool isBlockDown;
+
+    extern double lastUpdateTime;
 }
 
 int GenerateRandom(int x);
+double eventTriggered(double interval);

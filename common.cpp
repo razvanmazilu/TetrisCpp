@@ -34,9 +34,23 @@ int constants::blockSprites[4][4][4] =  {
                                                 {0,0,0,0}
                                             },
                                          };
+
+
+bool constants::isBlockDown = false;
+double constants::lastUpdateTime = 0.0;
+
 int GenerateRandom(int x) { 
-        std::cout<<__func__<<std::endl;
-        std::cout<<"x :"<<x<<std::endl;
-        srand(time(0));
-        return rand()%x; 
+    std::cout<<__func__<<std::endl;
+    std::cout<<"x :"<<x<<std::endl;
+    srand(time(0));
+    return rand()%x; 
+}
+
+double eventTriggered(double interval) {
+    double currentTime = GetTime();
+    if(currentTime - constants::lastUpdateTime >= interval) {
+        constants::lastUpdateTime = currentTime;
+        return true;
     }
+    return false;
+}
