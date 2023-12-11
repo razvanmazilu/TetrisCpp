@@ -9,7 +9,8 @@ public:
     Block();
     void Draw(Vector2 startPos, Color color);
     void Delete(Vector2 position, Color color);
-    void Rotate(char direction);
+    void Rotate();
     void Update();
     void CheckColisionWithWals();
+    void DebugPrint();
 };

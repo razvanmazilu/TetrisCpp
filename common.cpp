@@ -2,9 +2,10 @@
 #include<iostream>
 #include<time.h>
 
-int constants::height = 640;
-int constants::width = 320;
-int constants::offset = 10;
+int constants::height = 450;
+int constants::width = 220;
+int constants::offset = 20;
+int constants::lowerLimit = height - 2*offset - 15;
 
 Color constants::green = {173, 204, 96, 255};
 Color constants::darkGreen = {43, 51, 24, 255};
@@ -37,7 +38,6 @@ int constants::blockSprites[4][4][4] =  {
 
 
 bool constants::isBlockDown = false;
-int constants::lowerLimit = height - 2*offset - 15;
 double constants::lastUpdateTime = 0.0;
 
 int GenerateRandom(int x) { 

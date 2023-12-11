@@ -22,18 +22,17 @@ int main () {
         bk.Draw();
         block.Draw(position, constants::darkGreen);
         if(!constants::isBlockDown){
-             if(eventTriggered(0.2))
+             if(eventTriggered(0.6))
             {
+                block.Rotate();
                 block.Delete(position, constants::green);
                 position.y += 10;
             }
-            if (position.y == constants::lowerLimit)
+            if (position.y >= constants::lowerLimit)
             {
                 constants::isBlockDown = true;
             }
         }
-   
-
         EndDrawing();
     }
     CloseWindow();
