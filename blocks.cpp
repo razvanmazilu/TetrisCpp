@@ -39,7 +39,7 @@ void Block::Draw(Vector2 startPos, Color color)
 void Block::Rotate()
 {
     int tmp = 0;
-    for(int i = 0; i < 4; i++)
+    for(int i = 0; i < 3; i++)
         for(int j = i ;j < 4 ; j++)
         {
             if(i < j)

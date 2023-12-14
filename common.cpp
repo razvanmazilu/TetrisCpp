@@ -2,8 +2,8 @@
 #include<iostream>
 #include<time.h>
 
-int constants::height = 450;
-int constants::width = 220;
+int constants::height = 600;
+int constants::width = 300;
 int constants::offset = 20;
 int constants::lowerLimit = height - 2*offset - 15;
 
@@ -12,15 +12,15 @@ Color constants::darkGreen = {43, 51, 24, 255};
 
 int constants::blockSprites[4][4][4] =  {
                                             {
-                                                {0,1,0,0},
-                                                {0,1,0,0},
-                                                {0,1,0,0},
-                                                {0,1,0,0}
+                                                {1,0,0,0},
+                                                {1,0,0,0},
+                                                {1,0,0,0},
+                                                {1,0,0,0}
                                             },
                                             {
+                                                {1,0,0,0},
+                                                {1,1,0,0},
                                                 {0,1,0,0},
-                                                {0,1,1,0},
-                                                {0,0,1,0},
                                                 {0,0,0,0}
                                             },
                                             {   {0,0,1,0},
