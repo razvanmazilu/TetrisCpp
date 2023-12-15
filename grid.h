@@ -12,8 +12,6 @@ public:
     void Draw();
 
 private:
-
-    std::vector<Color> GetCellColors();
    int numRows;
    int numCols;
    int cellSize;

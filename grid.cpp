@@ -31,11 +31,6 @@ void Grid::Print()
     }
 }
 
-std::vector<Color> Grid::GetCellColors()
-{
-    return {constants::darkGreen, constants::green};
-}
-
 void Grid::Draw()
 {
     for(int row = 0; row < numRows; row++)

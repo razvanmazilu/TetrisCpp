@@ -55,3 +55,8 @@ double eventTriggered(double interval) {
     }
     return false;
 }
+
+std::vector<Color> GetCellColors()
+{
+    return {constants::darkGreen, constants::green};
+}

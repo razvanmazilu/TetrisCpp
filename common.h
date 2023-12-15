@@ -2,6 +2,8 @@
 #include <cstdlib> 
 #include<raylib.h>
 #include <raymath.h>
+#include<vector>
+
 
 namespace constants {
     extern int height;
@@ -21,3 +23,4 @@ namespace constants {
 
 int GenerateRandom(int x);
 double eventTriggered(double interval);
+std::vector<Color> GetCellColors();
