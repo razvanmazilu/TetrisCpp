@@ -10,17 +10,16 @@ namespace constants {
     extern int width;
     extern int offset;
 
-    extern Color green;
-    extern Color darkGreen;
-
-    extern int blockSprites[4][4][4];
-    
-    extern bool isBlockDown;
-    extern int lowerLimit;
-
-    extern double lastUpdateTime;
+    extern const Color darkGrey;
+    extern const Color green;
+    extern const Color red;
+    extern const Color orange;
+    extern const Color yellow;
+    extern const Color purple;
+    extern const Color cyan;
+    extern const Color blue;
+    extern const Color lightBlue;
+    extern const Color darkBlue;
 }
 
-int GenerateRandom(int x);
-double eventTriggered(double interval);
 std::vector<Color> GetCellColors();

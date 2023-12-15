@@ -1,10 +1,7 @@
 #include <iostream>
 #include<raylib.h>
+#include"game.h"
 #include"common.h"
-#include"background.h"
-#include"block.h"
-#include"grid.h"
-#include"blocks.cpp"
 
 
 int main () 
@@ -14,18 +11,14 @@ int main ()
     InitWindow(constants::width, constants::height, "Retro Tetris");
     SetTargetFPS(60);
 
-    Grid grid = Grid();
-    grid.Print();
+    Game game = Game();
 
-    LBlock block = LBlock();
     while(WindowShouldClose() == false)
     {
-
+        game.HandeInput();
         BeginDrawing();
-        ClearBackground(constants::green);
-        grid.Draw();
-        block.Draw();
-
+        ClearBackground(constants::darkBlue);
+        game.Draw();
         EndDrawing();
     }
     CloseWindow();
