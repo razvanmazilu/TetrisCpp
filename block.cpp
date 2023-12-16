@@ -7,7 +7,7 @@ Block::Block()
      rotationState = 0;
      rowOffset = 0;
      columnOffset = 0;
-     colors = GetCellColors();
+     colors = general::GetCellColors();
 }
 
 void Block::Draw()
@@ -24,6 +24,20 @@ void Block::Move(int rows, int columns)
 {
     rowOffset += rows;
     columnOffset += columns;
+}
+
+void Block::Rotate()
+{
+    rotationState++;
+    if(rotationState == (int)cells.size())
+        rotationState = 0;
+}
+
+void Block::UndoRotation()
+{
+    rotationState--;
+    if(rotationState == -1)
+        rotationState = (int)cells.size() - 1;
 }
 
 std::vector<Position> Block::GetCellPositions()

@@ -13,6 +13,8 @@ public:
     Block();
     void Draw();
     void Move(int rows, int columns);
+    void Rotate();
+    void UndoRotation();
     std::vector<Position> GetCellPositions();
 
 private:

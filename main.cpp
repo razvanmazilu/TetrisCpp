@@ -16,6 +16,10 @@ int main ()
     while(WindowShouldClose() == false)
     {
         game.HandeInput();
+        if(general::EventTriggered(0.2))
+        {
+            game.MoveBlockDown();
+        }   
         BeginDrawing();
         ClearBackground(constants::darkBlue);
         game.Draw();

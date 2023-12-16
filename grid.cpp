@@ -8,7 +8,7 @@ Grid::Grid()
     numCols = 10;
     cellSize = 30;
     Initialize();
-    colors = GetCellColors();
+    colors = general::GetCellColors();
 }
 
 void Grid::Initialize()
@@ -50,5 +50,13 @@ bool Grid::IsCellOutside(int row, int column)
     {
         return false;
     }
+    return true;
+}
+
+bool Grid::IsCellEmpty(int row, int column)
+{
+    if(grid[row][column])
+        return false;
+
     return true;
 }

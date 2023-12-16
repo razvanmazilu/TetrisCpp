@@ -6,9 +6,9 @@
 
 
 namespace constants {
-    extern int height;
-    extern int width;
-    extern int offset;
+    extern const int height;
+    extern const int width;
+    extern const int offset;
 
     extern const Color darkGrey;
     extern const Color green;
@@ -22,4 +22,8 @@ namespace constants {
     extern const Color darkBlue;
 }
 
-std::vector<Color> GetCellColors();
+namespace general
+{
+    bool EventTriggered(double interval);
+    std::vector<Color> GetCellColors();
+}
