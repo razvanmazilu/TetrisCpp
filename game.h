@@ -6,7 +6,6 @@ class Game
 {
 public:
     Game();
-    Block GetRandomBlock();
     std::vector<Block> GetAllBlocks();
     void Draw();
     void HandeInput();
@@ -20,6 +19,7 @@ private:
     Block currentBlock;
     Block nextBlock;
 
+    Block GetRandomBlock();
     void RotateBlock();
     void LockBlock();
     bool BlockFits();

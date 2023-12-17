@@ -1,5 +1,6 @@
 #include "game.h"
 #include <random>
+#include <iostream>
 
 Game::Game()
 {
@@ -18,6 +19,7 @@ Block Game::GetRandomBlock()
     int randomIndex = rand() % blocks.size();
     Block block = blocks[randomIndex];
     blocks.erase(blocks.begin() + randomIndex);
+    std::cout<<__func__<< ":: block Id:"<< block.id <<"\n";
     return block;
 }
 
@@ -98,6 +100,7 @@ void Game::LockBlock()
     }
     currentBlock = nextBlock;
     nextBlock = GetRandomBlock();
+    grid.ClearFullRows();
 }
 
 bool Game::BlockFits()
