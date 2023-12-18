@@ -13,6 +13,7 @@ public:
     void MoveBlockLRight();
     void MoveBlockDown();
     Grid grid;
+    bool gameOver;
 
 private:
     std::vector<Block> blocks;
@@ -22,6 +23,7 @@ private:
     Block GetRandomBlock();
     void RotateBlock();
     void LockBlock();
+    void Reset();
     bool BlockFits();
     bool IsBlockOutside();
 };

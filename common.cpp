@@ -2,8 +2,8 @@
 #include<iostream>
 #include<time.h>
 
-const int constants::height = 600;
-const int constants::width = 300;
+const int constants::height = 620;
+const int constants::width = 500;
 const int constants::offset = 20;
 
 

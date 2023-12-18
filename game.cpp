@@ -4,6 +4,7 @@
 
 Game::Game()
 {
+    gameOver = false;
     grid = Grid();
     blocks = GetAllBlocks();
     currentBlock = GetRandomBlock();
@@ -38,6 +39,11 @@ void Game::HandeInput()
 {
     int keyPressed = GetKeyPressed();
 
+    if(keyPressed != 0 && gameOver)
+    {
+        gameOver = false;
+        Reset();
+    }
     switch(keyPressed)
     {
     case KEY_LEFT:
@@ -57,38 +63,50 @@ void Game::HandeInput()
 
 void Game::MoveBlockLeft()
 {
-    currentBlock.Move(0,-1);
-    if(IsBlockOutside() || BlockFits() == false)
+    if(!gameOver)
     {
-        currentBlock.Move(0,1);
+        currentBlock.Move(0,-1);
+        if(IsBlockOutside() || BlockFits() == false)
+        {
+            currentBlock.Move(0,1);
+        }
     }
 }
 
 void Game::MoveBlockLRight()
 {
-    currentBlock.Move(0,1);
-    if(IsBlockOutside() || BlockFits() == false)
+    if(!gameOver)
     {
-        currentBlock.Move(0,-1);
+        currentBlock.Move(0,1);
+        if(IsBlockOutside() || BlockFits() == false)
+        {
+            currentBlock.Move(0,-1);
+        }
     }
 }
 
 void Game::MoveBlockDown()
 {
-    currentBlock.Move(1,0);
-    if(IsBlockOutside() || BlockFits() == false)
+    if(!gameOver)
     {
-        currentBlock.Move(-1,0);
-        LockBlock();
+        currentBlock.Move(1,0);
+        if(IsBlockOutside() || BlockFits() == false)
+        {
+            currentBlock.Move(-1,0);
+            LockBlock();
+        }
     }
 }
 
 void Game::RotateBlock()
 {
-    currentBlock.Rotate();
+    if(!gameOver)
+    {
+        currentBlock.Rotate();
+        if(IsBlockOutside())
+            currentBlock.UndoRotation();
+    }
 
-    if(IsBlockOutside())
-        currentBlock.UndoRotation();
 }
 
 void Game::LockBlock()
@@ -99,8 +117,20 @@ void Game::LockBlock()
         grid.grid[item.row][item.column] = currentBlock.id;
     }
     currentBlock = nextBlock;
+    if(BlockFits() == false)
+    {
+        gameOver = true;
+    }
     nextBlock = GetRandomBlock();
     grid.ClearFullRows();
+}
+
+void Game::Reset()
+{
+    grid.Initialize();
+    blocks = GetAllBlocks();
+    currentBlock = GetRandomBlock();
+    nextBlock = GetRandomBlock();
 }
 
 bool Game::BlockFits()
