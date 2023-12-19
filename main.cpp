@@ -17,6 +17,7 @@ int main ()
 
     while(WindowShouldClose() == false)
     {
+        UpdateMusicStream(game.music);
         game.HandeInput();
         if(general::EventTriggered(0.2))
         {
