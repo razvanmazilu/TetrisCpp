@@ -19,7 +19,7 @@ int main ()
     {
         UpdateMusicStream(game.music);
         game.HandeInput();
-        if(general::EventTriggered(0.2))
+        if(general::EventTriggered(0.27))
         {
             game.MoveBlockDown();
         }   
